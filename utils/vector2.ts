@@ -1,4 +1,4 @@
-class Vector2 {
+export default class Vector2 {
   constructor(
     public x: number = 0,
     public y: number = 0,
@@ -24,7 +24,14 @@ class Vector2 {
     return Math.sqrt(this.x * this.x + this.y * this.y);
   }
 
-  // 2点間の距離 (Unityの Vector2.Distance(a, b) 相当)
+  /**
+   * 3平方の定理(直角三角形の斜辺の長さを求める公式)を用いて2点間の距離を求める
+   * a^2 + b^2 = c^2
+   * c = √(a^2 + b^2)
+   * @param a - The first vector
+   * @param b - The second vector
+   * @returns The distance between the two vectors
+   */
   static distance(a: Vector2, b: Vector2): number {
     return Math.sqrt((a.x - b.x) ** 2 + (a.y - b.y) ** 2);
   }
